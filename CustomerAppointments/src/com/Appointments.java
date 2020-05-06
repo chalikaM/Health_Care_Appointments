@@ -72,7 +72,7 @@ public class Appointments extends HttpServlet {
 	 if (con == null)
 	 {return "Error while connecting to the database for reading."; }
 	 // Prepare the html table to be displayed
-	 output = "<table border=\'1\'><tr>Appointments<th>Patient Name</th><th>Patient NIC</th><th>Patient PhoneNumber</th><th>Doctor Name</th><th>Hospital Name</th><th>Date</th><th>Time</th><th>Update</th><th>Remove</th></tr>";
+	 output = "<table border='1'><tr>Appointments<th>Patient Name</th><th>Patient NIC</th><th>Patient PhoneNumber</th><th>Doctor Name</th><th>Hospital Name</th><th>Date</th><th>Time</th><th>Update</th><th>Remove</th></tr>";
 	 String query = "select * from appointment";
 	 Statement stmt = con.createStatement();
 	 ResultSet rs = stmt.executeQuery(query);

@@ -1,8 +1,7 @@
-$(document).ready(function() {
-	if ($("#alertSuccess").text().trim() == "") {
-		$("#alertSuccess").hide();
-	}
+$(document).ready(function () {
+	$("#alertSuccess").hide(); 
 	$("#alertError").hide();
+	
 });
 // SAVE ============================================
 $(document).on("click", "#btnSave", function(event) {
@@ -28,7 +27,7 @@ $(document).on("click", "#btnSave", function(event) {
 		data : $("#formAppointment").serialize(),
 		dataType : "text",
 		complete : function(response, status) {
-			onItemSaveComplete(response.responseText, status);
+			onAppointmentSaveComplete(response.responseText, status);
 		}
 	});
 });
@@ -63,13 +62,13 @@ $(document).on("click", ".btnRemove", function(event) {
 		data : "A_AppointmentID=" + $(this).data("appointmentid"),
 		dataType : "text",
 		complete : function(response, status) {
-			onItemDeleteComplete(response.responseText, status);
+			onAppointmentDeleteComplete(response.responseText, status);
 		}
 	});
 });
 
 //DELETE==========================================
-function onItemDeleteComplete(response, status) {
+function onAppointmentDeleteComplete(response, status) {
 	if (status == "success") {
 		var resultSet = JSON.parse(response);
 		if (resultSet.status.trim() == "success") {
