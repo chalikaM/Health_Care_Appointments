@@ -107,32 +107,41 @@ $(document).on(
 
 // CLIENTMODEL=========================================================================
 function validateAppointmentForm() {
-	// CODE
+	// patient name
 	if ($("#A_PatientName").val().trim() == "") {
 		return "Insert patient name.";
 	}
-	// NAME
+	// patient NIC
 	if ($("#A_PatientNIC").val().trim() == "") {
 		return "Insert patient NIC.";
 	}
-	// PRICE-------------------------------
+	// Patient Phone Number
 	if ($("#A_PatientPhoneNo").val().trim() == "") {
 		return "Insert patient phone number.";
 	}
 	
-	// DESCRIPTION------------------------
+	// is numerical value
+	var tmpPhoneNo = $("#A_PatientPhoneNo").val().trim();
+	if (!$.isNumeric(tmpPhoneNo)) {
+		return "Insert a numerical value for phone number.";
+	}
+	
+	// Doctor Name
 	if ($("#A_DoctorName").val().trim() == "") {
 		return "Insert doctor name.";
 	}
 	
+	//Hospital Name
 	if ($("#A_HospitalName").val().trim() == "") {
 		return "Insert hospital name.";
 	}
 	
+	//Date
 	if ($("#A_Date").val().trim() == "") {
 		return "Insert date.";
 	}
 	
+	//Time
 	if ($("#A_Time").val().trim() == "") {
 		return "Insert time.";
 	}

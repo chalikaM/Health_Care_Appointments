@@ -23,7 +23,7 @@
 			<div class="col-6">
 
 
-				<h1>Items Management V10</h1>
+				<h1>Appointments</h1>
 
 				<form id="formAppointment" name="formAppointment" method="post" action="appointments.jsp">
 					Patient Name : <input id="A_PatientName" name="A_PatientName" type="text"

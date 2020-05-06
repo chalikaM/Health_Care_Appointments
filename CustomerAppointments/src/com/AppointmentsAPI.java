@@ -27,7 +27,7 @@ public class AppointmentsAPI extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -51,8 +51,8 @@ public class AppointmentsAPI extends HttpServlet {
 		// TODO Auto-generated method stub
 
 		Map paras = getParasMap(request);
-		String output = appointmentObj.updateAppointment(paras.get("hidAppointmentIDSave").toString(),paras.get("A_PatientName").toString(), paras.get("A_PatientNIC").toString(),
-				paras.get("A_PatientPhoneNo").toString(), paras.get("A_DoctorName").toString(), paras.get("A_HospitalName").toString(), paras.get("A_Date").toString(), paras.get("A_Time").toString() );
+		String output = appointmentObj.updateAppointment(paras.get("hidAppointmentIDSave").toString(),paras.get("A_PatientName").toString().replace("+", " ").replace("%2B", " "), paras.get("A_PatientNIC").toString().replace("+", " "),
+				paras.get("A_PatientPhoneNo").toString().replace("+", " "), paras.get("A_DoctorName").toString().replace("+", " ").replace("%2B", " "), paras.get("A_HospitalName").toString().replace("+", " ").replace("%2B", " "), paras.get("A_Date").toString().replace("%252F", "/").replace("%2F", "/"), paras.get("A_Time").toString().replace("+", " ").replace("%2B", " ") );
 		response.getWriter().write(output);
 	}
 
