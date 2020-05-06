@@ -92,7 +92,7 @@ public class Appointments extends HttpServlet {
 		 
 		 
 	 // Add into the html table
-		// output += "<tr><td>" + A_PatientName + "</td>";
+		
 		 output += "<td>" + A_PatientNIC + "</td>";
 		 output += "<td>" + A_PatientPhoneNo + "</td>";
 		 output += "<td>" + A_DoctorName + "</td>";
