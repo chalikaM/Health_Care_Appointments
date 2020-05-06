@@ -108,7 +108,7 @@ public class Appointments extends HttpServlet {
 		 
 	 }
 	 con.close();
-	 // Complete the html table
+	 
 	 output += "</table>";
 	 }
 	 catch (Exception e)
